@@ -50,10 +50,10 @@ export default function SignupForm() {
   };
 
   return (
-    <form className="space-y-6" onSubmit={handleSubmit}>
-      <div className="flex gap-4">
+    <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+      <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1">
-          <label className="block text-[#344054] text-sm mb-1.5">
+          <label className="block text-[#344054] text-sm font-medium mb-1.5">
             First Name
           </label>
           <input
@@ -62,11 +62,11 @@ export default function SignupForm() {
             value={formData.firstName}
             onChange={handleChange}
             required
-            className="w-full px-3.5 py-2.5 bg-white border border-[#D0D5DD] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-[#0052CC]"
+            className="w-full px-3 md:px-3.5 py-2 md:py-2.5 bg-white border border-[#D0D5DD] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-[#0052CC] text-sm md:text-base"
           />
         </div>
         <div className="flex-1">
-          <label className="block text-[#344054] text-sm mb-1.5">
+          <label className="block text-[#344054] text-sm font-medium mb-1.5">
             Last Name
           </label>
           <input
@@ -75,12 +75,12 @@ export default function SignupForm() {
             value={formData.lastName}
             onChange={handleChange}
             required
-            className="w-full px-3.5 py-2.5 bg-white border border-[#D0D5DD] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-[#0052CC]"
+            className="w-full px-3 md:px-3.5 py-2 md:py-2.5 bg-white border border-[#D0D5DD] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-[#0052CC] text-sm md:text-base"
           />
         </div>
       </div>
       <div>
-        <label className="block text-[#344054] text-sm mb-1.5">
+        <label className="block text-[#344054] text-sm font-medium mb-1.5">
           Company Email
         </label>
         <input
@@ -90,11 +90,11 @@ export default function SignupForm() {
           onChange={handleChange}
           required
           placeholder="you@company.com"
-          className="w-full px-3.5 py-2.5 bg-white border border-[#D0D5DD] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-[#0052CC] placeholder:text-[#667085]"
+          className="w-full px-3 md:px-3.5 py-2 md:py-2.5 bg-white border border-[#D0D5DD] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-[#0052CC] placeholder:text-[#667085] text-sm md:text-base"
         />
       </div>
       <div>
-        <label className="block text-[#344054] text-sm mb-1.5">
+        <label className="block text-[#344054] text-sm font-medium mb-1.5">
           Company Name
         </label>
         <input
@@ -103,7 +103,7 @@ export default function SignupForm() {
           value={formData.companyName}
           onChange={handleChange}
           required
-          className="w-full px-3.5 py-2.5 bg-white border border-[#D0D5DD] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-[#0052CC]"
+          className="w-full px-3 md:px-3.5 py-2 md:py-2.5 bg-white border border-[#D0D5DD] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-[#0052CC] text-sm md:text-base"
         />
       </div>
       {message && (

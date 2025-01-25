@@ -66,22 +66,22 @@ export default function FeatureSection() {
   const currentService = services[activeTab];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-8 md:py-12 bg-white">
       <div className="max-w-[1400px] mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-[42px] font-medium text-[#172B4D] leading-[1.1]">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-[28px] md:text-[42px] font-medium text-[#172B4D] leading-[1.2] md:leading-[1.1]">
             Comprehensive Tax and Financial Services
-            <br />
+            <br className="hidden md:block" />
             for Your Business
           </h2>
         </div>
 
-        <div className="flex justify-center gap-6 mb-16">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-16">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-8 py-3 rounded-full text-base font-medium transition-colors ${
+              className={`px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-colors ${
                 activeTab === tab
                   ? "bg-[#01445E] text-white"
                   : "bg-[#F1F2F4] text-[#44546F] hover:bg-[#01445E] hover:text-white"
@@ -92,28 +92,28 @@ export default function FeatureSection() {
           ))}
         </div>
 
-        <div className="flex gap-16 items-start">
-          <div className="w-[40%] space-y-8">
-            <h3 className="text-[38px] font-semibold text-[#172B4D] leading-tight">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+          <div className="w-full md:w-[40%] space-y-6 md:space-y-8">
+            <h3 className="text-[28px] md:text-[38px] font-semibold text-[#172B4D] leading-tight">
               {currentService.title}
             </h3>
-            <h4 className="text-2xl font-medium text-[#01445E]">
+            <h4 className="text-xl md:text-2xl font-medium text-[#01445E]">
               {currentService.description}
             </h4>
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {currentService.points.map((point, index) => (
                 <div key={index} className="flex gap-3">
                   <svg className="w-5 h-5 text-[#01445E] mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <p className="text-[#172B4D] text-lg leading-relaxed">
+                  <p className="text-[#172B4D] text-base md:text-lg leading-relaxed">
                     {point}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="w-[60%] bg-[#F1F2F4] rounded-lg overflow-hidden h-[500px] relative">
+          <div className="w-full md:w-[60%] bg-[#F1F2F4] rounded-lg overflow-hidden h-[300px] md:h-[500px] relative">
             <Image
               src={currentService.image}
               alt={activeTab}
@@ -121,7 +121,7 @@ export default function FeatureSection() {
               className="object-cover"
               priority
               quality={100}
-              sizes="(max-width: 1400px) 60vw, 800px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1400px) 60vw, 800px"
               style={{ 
                 objectFit: 'cover',
                 objectPosition: 'center',

@@ -26,8 +26,8 @@ export default function AutoCarousel() {
   }, []);
 
   return (
-    <div className="relative flex flex-col">
-      <div className="bg-[#00425A] rounded-[32px] shadow-lg overflow-hidden w-[600px] h-[600px]">
+    <div className="relative flex flex-col w-full max-w-[600px] mx-auto px-4 sm:px-0">
+      <div className="bg-[#00425A] rounded-[16px] sm:rounded-[32px] shadow-lg overflow-hidden w-full aspect-[4/5] sm:aspect-square">
         {/* Carousel Content */}
         <div className="relative w-full h-full">
           {carouselItems.map((item, index) => (
@@ -42,7 +42,7 @@ export default function AutoCarousel() {
                   src={item.image || ''}
                   alt={`Slide ${index + 1}`}
                   fill
-                  className="object-fill"
+                  className="object-contain p-2 sm:p-0 sm:object-fill"
                   priority={index === 0}
                 />
               </div>
@@ -52,35 +52,34 @@ export default function AutoCarousel() {
       </div>
 
       {/* Bottom Controls */}
-      <div className="flex justify-center items-center gap-4 mt-4">
+      <div className="flex justify-center items-center gap-2 sm:gap-4 mt-3 sm:mt-4">
         <button
           onClick={() => setCurrentSlide((prev) => (prev === 0 ? carouselItems.length - 1 : prev - 1))}
-          className="text-gray-400 hover:text-gray-600"
+          className="text-gray-400 hover:text-gray-600 p-1 sm:p-2 text-lg sm:text-2xl"
+          aria-label="Previous slide"
         >
           ←
         </button>
         
-        <div className="flex gap-2">
+        <div className="flex gap-2 sm:gap-3">
           {carouselItems.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
                 currentSlide === index ? "bg-[#2E90FA]" : "bg-gray-300"
               }`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
 
         <button
           onClick={() => setCurrentSlide((prev) => (prev === carouselItems.length - 1 ? 0 : prev + 1))}
-          className="text-gray-400 hover:text-gray-600"
+          className="text-gray-400 hover:text-gray-600 p-1 sm:p-2 text-lg sm:text-2xl"
+          aria-label="Next slide"
         >
           →
-        </button>
-
-        <button className="text-gray-400 hover:text-gray-600 ml-2">
-          ∥
         </button>
       </div>
     </div>
