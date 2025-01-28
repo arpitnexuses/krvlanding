@@ -11,7 +11,7 @@ export default function CompanyIntroSection() {
               </p>
               
               <h2 className="text-[24px] md:text-[32px] font-semibold text-[#01445E] leading-tight">
-                We are an FTA Approved Tax Agency and Auditors licensed by Ministry of Economy in UAE.
+                We are an Agency and Auditors licensed by Ministry of Economy in UAE.
               </h2>
             </div>
             
